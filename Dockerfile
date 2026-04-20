@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1.4
 FROM alpine:latest AS stage1
 
 RUN apk add --no-cache git openssh-client
