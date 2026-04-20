@@ -2,7 +2,9 @@
 FROM alpine:latest AS stage1
 
 RUN apk add --no-cache git openssh-client
-RUN mkdir -p -m 0700 ~/.ssh && \ssh-keyscan github.com >> ~/.ssh/known_hosts
+RUN mkdir -p -m 0700 ~/.ssh && \
+    ssh-keyscan github.com >> ~/.ssh/known_hosts
+
 RUN --mount=type=ssh git clone git@github.com:hubert00100/pawcho6.git /src
 
 ARG VERSION=1.0
